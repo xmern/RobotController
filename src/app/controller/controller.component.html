@@ -1,0 +1,48 @@
+<div class="container" fxFlex fxLayout="row">
+    <mat-card style="width:100%">
+        <mat-card-content>
+        <div fxFlex fxLayout="column" >
+            <mat-progress-spinner
+                class="example-margin"
+                [color]="color"
+                [mode]="mode"
+                [value]="motor1Speed">
+            </mat-progress-spinner>
+            <mat-slider
+                class="example-margin"
+                [disabled]="disabled"
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [discrete]="thumbLabel"
+                [showTickMarks]="showTicks">
+                <input matSliderThumb [(ngModel)]="motor1Speed"(input)="onSlider1Change()" #slider>
+            </mat-slider>
+        </div>
+        <div>
+            <button mat-flat-button color="accent">stop</button>
+        </div>
+        <div>
+            <button mat-flat-button color="accent">stop</button>
+        </div>
+        <div fxFlex fxLayout="column" >
+            <mat-progress-spinner
+                class="example-margin"
+                [color]="color"
+                [mode]="mode"
+                [value]="motor2Speed">
+            </mat-progress-spinner>
+            <mat-slider
+                class="example-margin"
+                [disabled]="disabled"
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [discrete]="thumbLabel"
+                [showTickMarks]="showTicks">
+                <input matSliderThumb [(ngModel)]="motor2Speed"(input)="onSlider2Change()" #slider>
+            </mat-slider>
+        </div> 
+        </mat-card-content>
+    </mat-card>   
+</div>
