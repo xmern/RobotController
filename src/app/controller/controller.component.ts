@@ -45,27 +45,27 @@ export class ControllerComponent {
     this.motor2Speed = 0
   }
   setSpeed1(speed:any): void{
-    // this.httpGateway.get('speed?motor1speed='+speed.toString()+'&'+'motor2speed='+this.motor2Speed.toString()).subscribe(
-    //   response => {
-    //   },
-    //   error => {
-    //     console.error('', error.error);
+    this.httpGateway.get('speed?motor1Speed='+speed.toString()).subscribe(
+      response => {
+      },
+      error => {
+        console.error('', error.error);
         
-    //   }
-    // );
+      }
+    );
     console.log('rrr')
 
   }
 
   setSpeed2(speed:any): void{
-    // this.httpGateway.get('speed?motor1speed='+this.motor1Speed.toString()+'&'+'motor2speed='+speed.toString()).subscribe(
-    //   response => {
-    //   },
-    //   error => {
-    //     console.error('', error.error);
+    this.httpGateway.get('speed?motor2speed='+speed.toString()).subscribe(
+      response => {
+      },
+      error => {
+        console.error('', error.error);
         
-    //   }
-    // );
+      }
+    );
 
   }
 }
