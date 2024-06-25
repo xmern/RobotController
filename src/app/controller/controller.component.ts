@@ -20,7 +20,7 @@ export class ControllerComponent {
   max = 100;
   min = -100;
   showTicks = false;
-  step = 1;
+  step = 10;
   thumbLabel = true;
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';   
@@ -40,9 +40,11 @@ export class ControllerComponent {
   }  
   stopMotor1(){
     this.motor1Speed = 0
+    this.motor1SpeedSubject.next(this.motor1Speed);
   }
   stopMotor2(){
     this.motor2Speed = 0
+    this.motor2SpeedSubject.next(this.motor2Speed);
   }
   setSpeed1(speed:any): void{
     this.httpGateway.get('speed?motor1Speed='+speed.toString()).subscribe(
@@ -58,7 +60,7 @@ export class ControllerComponent {
   }
 
   setSpeed2(speed:any): void{
-    this.httpGateway.get('speed?motor2speed='+speed.toString()).subscribe(
+    this.httpGateway.get('speed?motor2Speed='+speed.toString()).subscribe(
       response => {
       },
       error => {
